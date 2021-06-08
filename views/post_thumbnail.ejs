@@ -1,0 +1,21 @@
+<div style="position: relative;">
+    <% if(story.status === "private"){ %>
+        <img src="images/badge.png" width="50px" style="position: absolute;top:0px;right:0px">
+    <% } %>
+    <div style="padding: 3px 8px;margin-bottom:0;background-color: #ffbbcc;color: black;border-top-left-radius:8px;border-top-right-radius: 8px;">
+        <h4 style=""> <%= story.title %></h4>
+        <p style="color: hotpink;font-weight: bold;">author : <%= story.author %></p>
+        <p><%= story.date %><br />#<%=story.category %></p>
+    </div>
+    <p style="margin-top:0;white-space: pre-wrap;background-color: #ffddcc;border-bottom-left-radius:8px;border-bottom-right-radius: 8px;padding: 3px 8px">
+        <%= story.post.substring(0,300) %>...
+        <a href="/posts/<%= story.title %>">Read more</a>
+    </p>
+    <hr/>
+</div>
+
+<script>
+    function like(count){
+        count++;
+    }
+</script>

@@ -1,0 +1,40 @@
+<%- include("partials/header.ejs") -%>
+
+<h5 class="post_heading">
+    <img src="images/fnl.png" width="30px">
+    add new post!
+</h5>
+
+<form action="/compose" method="POST" style="margin-bottom: 10px;margin-top: 10px;display: grid;grid-template-columns: 1fr 1fr 1fr;grid-gap: 10px;">
+
+    <!-- <div class="form-group "> -->
+        <input type="text" class="form-control form-select form-control" id="title" name="title" placeholder="title">
+    <!-- </div> -->
+
+    <select name="category" class="form-group form-select form-control" aria-label="Default select example">
+        <option class="form-control" selected disabled>selet category</option>
+        <option value="quote" class="form-control">Quote</option>
+        <option value="shortStory" class="form-control">Short Story</option>
+        <option value="article" class="form-control">Article</option>
+        <option value="poetry" class="form-control">Poetry</option>
+        <option value="technical-blog" class="form-control">Technical Blog</option>
+        <option value="travel-blog" class="form-control">Travel Blog</option>
+        <option value="diary" class="form-control">Diary</option>
+    </select>
+
+    <select class="form-group form-select form-control form-control-sm" name="reach" aria-label="Default select example">
+        <option selected disabled>do you want it to publish?</option>
+        <option value="public" name="category">Public</option>
+        <option value="private" name="category">Private(only you can access)</option>
+    </select>
+
+    <div class="form-group" style="grid-column-start: 1;grid-column-end: 4;">
+        <textarea type="text" rows="10" cols="15" class="form-control" id="story" name="story">Write Your Story Here...!</textarea>
+    </div>
+
+    <button class="btn btn-primary" type="submit" name="publish">Publish</button>
+
+</form>
+
+<br>
+<%- include("partials/footer.ejs") -%>

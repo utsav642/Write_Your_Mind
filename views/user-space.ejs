@@ -1,0 +1,28 @@
+<%- include("partials/header.ejs") -%>
+
+<br>
+
+<% if(Today){ %>
+    <div class="check">
+        Done with today's diary!
+    </div>
+<% }else{ %>
+    <div class="check">
+        <img src="images/alarm.png" width="35px">
+        Remaining with Today's Diary!&nbsp;&nbsp;
+        <a href="/compose">Write Now!</a>
+    </div>
+<% } %>
+
+<br>
+
+<div style="display: grid;grid-template-columns: 1fr 1fr;grid-gap: 10px">
+    <% Stories.forEach(function(story){ %>
+        <%- include("post_thumbnail.ejs",{story: story}) -%>
+    <% }); %>
+
+</div>
+
+<br>
+
+<%- include("partials/footer.ejs") -%>
